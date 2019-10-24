@@ -1,14 +1,14 @@
 import React from "react";
 import ProductList from "./ProductList";
 import ProductEntry from "./ProductEntry";
-import jsn from "./prod-data.json";
+import result from "./prod-data.json";
 
 class ProductPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleProductAdd = this.handleProductAdd.bind(this);
     this.state = {
-      prList: jsn.productList,
+      prList: result.ProductList,
     }
   }
 
@@ -17,7 +17,6 @@ class ProductPage extends React.Component {
     prl = this.state.prList.slice();
     prl.push(prd);
     this.setState({prList: prl});
-    console.log(JSON.stringify(this.state.prList));
   }
 
   render() {
