@@ -2,29 +2,35 @@ import React from 'react';
 import { Col, Form, Button } from "react-bootstrap";
 
 class ProductEntry extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleProductAdd = this.handleProductAdd.bind(this);
+    this.refDiv = React.createRef();
     this.state = {};
   }
 
   handleProductAdd(e) {
-    this.props.onProductAdd({productName: this.state.productName, productNumber: this.state.productNumber});
+    console.log("prd", this.state.Product);
+    this.props.onProductAdd(this.state.Product);
   }
 
   handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    let prn = e.target.name;
+    let prd = e.target.value;
+    this.setState(prevState => ({
+      Product: { ...prevState.Product, [prn]: prd}
+    }));
   }
 
   render() {
     return (
       <Form>
-        <Form.Row>
-          <Col><Form.Control placeholder="Product Name" name="productName" onChange={this.handleChange}></Form.Control></Col>
-          <Col><Form.Control type="number" name="productNumber" onChange={this.handleChange} placeholder="Product Number"></Form.Control></Col>
+        <Form.Row ref={this.refDev}>
+          <Col><Form.Control placeholder="Product Name" name="ProductName" onChange={this.handleChange}></Form.Control></Col>
+          <Col><Form.Control type="number" name="MRP" onChange={this.handleChange} placeholder="MRP"></Form.Control></Col>
+          <Col><Form.Control type="number" name="SellingPrice" onChange={this.handleChange} placeholder="Selling Price"></Form.Control></Col>
+          <Col><Form.Control type="number" name="TaxPercent" onChange={this.handleChange} placeholder="Tax Percent"></Form.Control></Col>
           <Col><Button onClick={this.handleProductAdd}>Add</Button></Col>
         </Form.Row>
       </Form>

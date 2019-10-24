@@ -1,10 +1,22 @@
 {
-  "productList": [
+  "ProductList": [
     {
-      "productName": "PROD1"
+      "ProductName": "Fanta",
+      "MRP": 30,
+      "SellingPrice": 23,
+      "TaxPercent": 18
     },
     {
-      "productName": "PROD2"
+      "ProductName": "Coke",
+      "MRP": 40,
+      "SellingPrice": 32,
+      "TaxPercent": 12
+    },
+    {
+      "ProductName": "Pepsi",
+      "MRP": 34,
+      "SellingPrice": 27,
+      "TaxPercent": 12
     }
   ]
 }
