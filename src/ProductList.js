@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Table } from "react-bootstrap";
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   wrapTd(text) {
     return (<td>{text}</td>);
   }

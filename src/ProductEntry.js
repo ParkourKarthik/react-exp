@@ -1,12 +1,11 @@
 import React from 'react';
-import { Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 
 class ProductEntry extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleProductAdd = this.handleProductAdd.bind(this);
-    this.refDiv = React.createRef();
     this.state = {};
   }
 
@@ -19,7 +18,7 @@ class ProductEntry extends React.Component {
     let prn = e.target.name;
     let prd = e.target.value;
     this.setState(prevState => ({
-      Product: { ...prevState.Product, [prn]: prd}
+      Product: { ...prevState.Product, [prn]: prd }
     }));
   }
 
