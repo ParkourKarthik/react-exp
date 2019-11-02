@@ -2,6 +2,7 @@ import React from "react";
 import ProductList from "./ProductList";
 import ProductEntry from "./ProductEntry";
 import result from "./prod-data.json";
+import { MDBContainer, MDBRow } from "mdbreact";
 
 class ProductPage extends React.Component {
   constructor(props) {
@@ -16,15 +17,19 @@ class ProductPage extends React.Component {
     var prl = [];
     prl = this.state.prList.slice();
     prl.push(prd);
-    this.setState({prList: prl});
+    this.setState({ prList: prl });
   }
 
   render() {
     return (
-      <>
-        <ProductEntry onProductAdd={this.handleProductAdd} />
-        <ProductList value={this.state.prList} />
-      </>
+      <MDBContainer>
+        <MDBRow className="mt-3">
+          <ProductEntry onProductAdd={this.handleProductAdd} />
+        </MDBRow>
+        <MDBRow className="mt-3">
+          <ProductList value={this.state.prList} />
+        </MDBRow>
+      </MDBContainer>
     )
   }
 }

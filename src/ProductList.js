@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Table } from "react-bootstrap";
+import { MDBTable, MDBTableHead, MDBContainer } from 'mdbreact';
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   wrapTd(text) {
     return (<td>{text}</td>);
   }
@@ -16,25 +13,27 @@ class ProductList extends Component {
     for (let i = 0; i < lst.length; i++) {
       let prd = [];
       for(const key in lst[i]){
-        console.log("obj",lst[i][key]);
-        prd.push(this.wrapTd(lst[i][key]));
+        if(key != "_id") {
+          console.log("obj",lst[i][key]);
+          prd.push(this.wrapTd(lst[i][key]));
+          }
       }
       prdList.push(<tr>{prd}</tr>);
     }
     return (
-      <div>
-        <Table responsive="sm">
-          <thead>
+      <MDBContainer>
+        <MDBTable responsive="sm">
+          <MDBTableHead>
             <tr>
               <th>Product Name</th>
               <th>MRP</th>
               <th>Selling Price</th>
               <th>Tax Percent</th>
             </tr>
-          </thead>
+          </MDBTableHead>
           <tbody>{prdList}</tbody>
-        </Table>
-      </div>
+        </MDBTable>
+      </MDBContainer>
     )
   }
 }

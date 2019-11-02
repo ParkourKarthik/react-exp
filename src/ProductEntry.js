@@ -1,12 +1,11 @@
 import React from 'react';
-import { Col, Form, Button } from "react-bootstrap";
+import { MDBContainer, MDBRow, MDBInput, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBCardHeader } from "mdbreact";
 
 class ProductEntry extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleProductAdd = this.handleProductAdd.bind(this);
-    this.refDiv = React.createRef();
     this.state = {};
   }
 
@@ -19,21 +18,39 @@ class ProductEntry extends React.Component {
     let prn = e.target.name;
     let prd = e.target.value;
     this.setState(prevState => ({
-      Product: { ...prevState.Product, [prn]: prd}
+      Product: { ...prevState.Product, [prn]: prd }
     }));
   }
 
   render() {
     return (
-      <Form>
-        <Form.Row ref={this.refDev}>
-          <Col><Form.Control placeholder="Product Name" name="ProductName" onChange={this.handleChange}></Form.Control></Col>
-          <Col><Form.Control type="number" name="MRP" onChange={this.handleChange} placeholder="MRP"></Form.Control></Col>
-          <Col><Form.Control type="number" name="SellingPrice" onChange={this.handleChange} placeholder="Selling Price"></Form.Control></Col>
-          <Col><Form.Control type="number" name="TaxPercent" onChange={this.handleChange} placeholder="Tax Percent"></Form.Control></Col>
-          <Col><Button onClick={this.handleProductAdd}>Add</Button></Col>
-        </Form.Row>
-      </Form>
+      <MDBContainer>
+        <MDBCard>
+          <MDBCardHeader>Sales Entry</MDBCardHeader>
+          <MDBCardBody>
+            <form>
+              <MDBRow>
+                <MDBCol md="2">
+                  <MDBInput label="Product" name="ProductName" onChange={this.handleChange}></MDBInput>
+                </MDBCol>
+                <MDBCol md="2">
+                  <MDBInput type="number" name="MRP" onChange={this.handleChange} label="MRP"></MDBInput>
+                </MDBCol>
+                <MDBCol md="2">
+                  <MDBInput type="number" name="SellingPrice" onChange={this.handleChange} label="S.P"></MDBInput>
+                </MDBCol>
+                <MDBCol md="2">
+                  <MDBInput type="number" name="TaxPercent" onChange={this.handleChange} label="GST %"></MDBInput>
+                </MDBCol>
+                <MDBCol md="4">
+                <MDBBtn onClick={this.handleProductAdd} color="primary">Add</MDBBtn>
+                </MDBCol>
+              </MDBRow>
+            </form>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBContainer>
+
     )
   }
 }
