@@ -3,8 +3,8 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css'
-import ProductPage from './ProductPage';
-import About from './About';
+import ProductPage from './components/ProductPage';
+import About from './components/About';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
