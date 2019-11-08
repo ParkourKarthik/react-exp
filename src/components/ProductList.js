@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MDBTable, MDBTableHead, MDBContainer } from 'mdbreact';
 
 const ProductList = ({ productList }) => {
@@ -11,7 +11,7 @@ const ProductList = ({ productList }) => {
   for (let i = 0; i < lst.length; i++) {
     let prd = [];
     for (const key in lst[i]) {
-      if (key != "_id") {
+      if (key !== "_id") {
         console.log("obj", lst[i][key]);
         prd.push(wrapTd(lst[i][key]));
       }

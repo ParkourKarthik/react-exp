@@ -4,11 +4,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css'
 import ProductPage from './components/ProductPage';
-import About from './components/About';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { MDBContainer } from 'mdbreact';
+import SimpleForm from './components/SimpleForm';
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
           </LinkContainer>
         </Navbar.Brand>
           <Nav className="mr-auto">
-            <LinkContainer to="/about">
-              <Nav.Link>About</Nav.Link>
+            <LinkContainer to="/form">
+              <Nav.Link>Form</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/product">
             <Nav.Link>Product</Nav.Link>
@@ -31,7 +31,7 @@ function App() {
         </Navbar>
         <MDBContainer>
         <Route path="/product" component={ProductPage} />
-        <Route path="/about" component={About} />
+        <Route path="/form" component={SimpleForm} />
         </MDBContainer>
       </div>
 

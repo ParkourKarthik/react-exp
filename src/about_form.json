@@ -1,0 +1,8 @@
+{
+  "name": "salesEntry",
+  "title": "Sales Entry",
+  "controls":[
+    {"name":"Product", "type": "text"},
+    {"name": "MRP", "type": "number"}
+  ]
+}
