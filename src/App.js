@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css'
 import ProductPage from './components/ProductPage';
 import { Navbar, Nav } from 'react-bootstrap';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { MDBContainer } from 'mdbreact';
 import SimpleForm from './components/SimpleForm';

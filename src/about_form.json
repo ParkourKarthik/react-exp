@@ -2,7 +2,7 @@
   "name": "salesEntry",
   "title": "Sales Entry",
   "controls":[
-    {"name":"Product", "type": "text"},
+    {"name":"Product", "type": "text", "onchange": "function() { alert('hi') }"},
     {"name": "MRP", "type": "number"}
   ]
 }
